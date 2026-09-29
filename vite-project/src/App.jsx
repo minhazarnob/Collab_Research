@@ -1,5 +1,5 @@
-// src/App.jsx
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Components/Home";
 import Login from "./Components/Login";
 import Register from "./Components/Register";
@@ -11,12 +11,12 @@ import About from "./Components/About";
 import Privacy from './Components/Privacy';
 import Contact from './Components/Contact';
 import VerifyEmail from "./Components/VerifyEmail";
-import AddResearchForm from "./Components/AddResearchForm";// ✅ Imported About component
+import AddResearchForm from "./Components/AddResearchForm";
 import TermsComponent from "./Components/Terms";
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -32,7 +32,7 @@ function App() {
         <Route path="/add-research" element={<AddResearchForm />} />
         <Route path="/terms" element={<TermsComponent />} /> {/* ✅ Added About Route */}
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 

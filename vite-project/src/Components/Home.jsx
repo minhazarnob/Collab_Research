@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+
+import { useState } from 'react';
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -8,85 +9,6 @@ const Home = () => {
     setActiveAccordion(activeAccordion === index ? null : index);
   };
 
-  const features = [
-    {
-      icon: "👥",
-      title: "Collaborate Easily",
-      description: "Connect with researchers across disciplines and institutions"
-    },
-    {
-      icon: "📈",
-      title: "Track Progress",
-      description: "Visualize your research milestones and achievements"
-    },
-    {
-      icon: "🛠️",
-      title: "Build Teams",
-      description: "Form ideal research groups with skill matching"
-    },
-    {
-      icon: "💬",
-      title: "Group Chat",
-      description: "Real-time communication with your research teams"
-    },
-    {
-      icon: "🎓",
-      title: "Premium Courses",
-      description: "Access exclusive research methodology courses"
-    },
-    {
-      icon: "📊",
-      title: "Analytics",
-      description: "Get insights on your research impact"
-    }
-  ];
-
-  const testimonials = [
-    {
-      quote: "CollabResearch helped me find the perfect team for my bioinformatics project",
-      author: "Atikur Rahman, PUST"
-    },
-    {
-      quote: "Our publication quality improved significantly using the collaboration tools",
-      author: "Kabir Hasan, PUST"
-    }
-  ];
-
-  const newsItems = [
-    "New: Collaborative writing tool now available!",
-    "Research grant opportunities updated weekly",
-    "Join our webinar on effective academic collaboration - July 15th",
-    "50+ new researchers joined this month",
-    "Version 2.0 released with enhanced analytics"
-  ];
-
- 
-  const courses = [
-    {
-      title: "How to write a Research Paper",
-      instructor: "Dr. Monirul Islam",
-      price: "৳1,500",
-      duration: "6 weeks",
-      rating: "4.8",
-      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-    },
-    {
-      title: "Literature Review & Reference Management",
-      instructor: "Dr. Imdadul Haque",
-      price: "৳1,200",
-      duration: "4 weeks",
-      rating: "4.9",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-    },
-    {
-      title: "Data Analysis and Interpretation for Research",
-      instructor: "Dr. Mijanur Rahman",
-      price: "৳1,800",
-      duration: "8 weeks",
-      rating: "4.7",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-    }
-  ];
 
 const faqs = [
   {
@@ -345,64 +267,20 @@ const faqs = [
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Header */}
-      <header className="bg-white shadow-md">
-        <div className="max-w-7xl mx-auto flex justify-between items-center p-4">
-          <div className="flex items-center">
-            <img
-              src="../src/assets/Images/logo.png" // Replace with your actual image path
-              alt="CR"
-              className="h-8 w-8 mr-2" // Adjust size as needed
-            />
-            <h1 className="text-2xl font-bold text-blue-600">CollabResearch</h1>
-          </div>
-
-          <nav className="space-x-2 hidden md:flex"> {/* Reduced space between buttons */}
-            <Link
-              to="/about"
-              className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:text-blue-600 hover:border-blue-600 hover:bg-blue-50 transition-colors duration-200"
-            >
-              About
-            </Link>
-            <Link
-              to="/login"
-              className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:text-blue-600 hover:border-blue-600 hover:bg-blue-50 transition-colors duration-200"
-            >
-              Login
-            </Link>
-            <Link
-              to="/register"
-              className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:text-blue-600 hover:border-blue-600 hover:bg-blue-50 transition-colors duration-200"
-            >
-              Sign Up
-            </Link>
-          </nav>
-
-          {/* Mobile menu button remains the same */}
-          <div className="md:hidden">
-            <button className="text-gray-700 hover:text-blue-600">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-      </header>
 
       {/* Hero Section with Background Image */}
       <section className="relative py-20 px-4 bg-blue-50">
-        {/* Background Image with Opacity */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
-            src="/src/assets/images/Varsity.jpg" // Add your image URL here
-            alt="Research collaboration background"
+            src="../assets/Images/Research.jpg" 
+            alt="background"
             className="w-full h-full object-cover opacity-20"
           />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto text-center">
           <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
-            Connect. <span className="text-blue-600">Collaborate.</span> Create.
+            Connect. <span className="text-blue-600">Collaborate</span> Create
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-10">
             Join thousands of researchers sharing publications, forming teams, and collaborating on groundbreaking projects
@@ -429,23 +307,7 @@ const faqs = [
         </div>
       </section>
 
-      {/* News Ticker */}
-      <div className="bg-blue-600 text-white py-3 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex items-center">
-            <span className="font-bold mr-4 whitespace-nowrap">Latest News:</span>
-            <div className="relative overflow-hidden w-full">
-              <div className="animate-marquee whitespace-nowrap">
-                {newsItems.map((item, index) => (
-                  <span key={index} className="mx-8 inline-block">
-                    {item} •
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      
 
       {/* Platform Highlights */}
       <section id="features-section" className="py-16 px-4 bg-gray-50">
@@ -653,7 +515,6 @@ const faqs = [
   </div>
 </section>
 
-     {/* Research Tools Section */}
 {/* Research Tools Section */}
 <section className="py-16 px-4 bg-gradient-to-b from-blue-50 to-white">
   <div className="max-w-7xl mx-auto">

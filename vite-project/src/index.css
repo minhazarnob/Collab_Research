@@ -1,4 +1,6 @@
+
 @import "tailwindcss";
+
 .typing-dots {
   display: inline-flex;
   align-items: center;
