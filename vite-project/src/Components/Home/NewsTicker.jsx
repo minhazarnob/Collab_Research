@@ -10,9 +10,7 @@ const NewsTicker = () => {
           <div className="relative overflow-hidden w-full">
             <div className="animate-marquee whitespace-nowrap">
               {newsItems.map((item, index) => (
-                <span key={index} className="mx-8 inline-block">
-                  {item} •
-                </span>
+                <span key={index} className="mx-8 inline-block">{item} •</span>
               ))}
             </div>
           </div>

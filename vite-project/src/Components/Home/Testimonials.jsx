@@ -1,4 +1,3 @@
-import React from 'react';
 
 const Testimonials = () => {
     return (
@@ -18,7 +17,6 @@ const Testimonials = () => {
           </div>
         </div>
       </section>
-
     );
 };
 

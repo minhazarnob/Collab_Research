@@ -1,4 +1,5 @@
-import {courses} from "../../utils/constants"
+
+import {courses} from "../../utils/constants";
 import { Link } from "react-router-dom";
 
 const CoursesSection = () => {
