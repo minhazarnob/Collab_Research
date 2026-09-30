@@ -7,8 +7,8 @@ const CoursesSection = () => {
         <section className="py-16 px-4 bg-gray-50">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-4">Premium Research Courses</h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
+                    <h3 className="text-4xl font-bold text-gray-800 mb-6 bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-pink-600">Premium Research Courses</h3>
+                    <p className="text-gray-600 max-w-2xl mx-auto text-xl">
                         Enhance your research skills with our expert-led courses
                     </p>
                 </div>
@@ -24,17 +24,17 @@ const CoursesSection = () => {
                             </div>
 
                             <div className="p-6">
-                                <div className="flex justify-between items-start mb-2">
+                                <div className="flex justify-between items-start mb-2 ">
                                     <h3 className="text-xl font-bold">{course.title}</h3>
-                                    <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">{course.rating} ★</span>
+                                    <span className="bg-blue-100 text-orange-600 text-sm px-2 py-1 rounded-full bg-orange-100">{course.rating} ★</span>
                                 </div>
-                                <p className="text-gray-600 mb-4">By {course.instructor}</p>
+                                <p className="text-gray-600 mb-4 text-lg">By {course.instructor}</p>
                                 <div className="flex justify-between items-center">
                                     <div>
                                         <span className="text-2xl font-bold text-gray-900">{course.price}</span>
-                                        <span className="text-gray-500 text-sm ml-1">/{course.duration}</span>
+                                        <span className="text-gray-500 text-lg ml-1">/{course.duration}</span>
                                     </div>
-                                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm font-medium">
+                                    <button className="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-full text-sm font-medium">
                                         Enroll Now
                                     </button>
                                 </div>
@@ -46,7 +46,7 @@ const CoursesSection = () => {
                 <div className="text-center mt-12">
                     <Link
                     to="/login"
-                    className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-blue-600 hover:bg-blue-700"
+                    className="inline-flex items-center px-6 py-3 border border-transparent text-lg font-medium rounded-full shadow-sm text-white bg-orange-600 hover:bg-orange-700"
                     >
                         View All Courses
                         <svg className="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">

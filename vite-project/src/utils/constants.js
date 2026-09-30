@@ -1,31 +1,40 @@
+
+import {Users, TrendingUp, MessageCircle} from "lucide-react";
+import {Wrench, GraduationCap, BarChart3} from "lucide-react";
+import {Share2,Rabbit,BookMarked,SpellCheck} from "lucide-react";
+import {Feather,BookOpen,Dna} from "lucide-react";
+import ResearchWrite from "../assets/Images/Reaearch-write.jpg"
+import ResearchReview from "../assets/Images/Research-review.jpg"
+import DataAnalytics from "../assets/Images/Data_Analytics.jpg"
+
 export const features = [
   {
-    icon: "👥",
+    icon: Users,
     title: "Collaborate Easily",
     description: "Connect with researchers across disciplines and institutions"
   },
   {
-    icon: "📈",
+    icon: TrendingUp,
     title: "Track Progress",
     description: "Visualize your research milestones and achievements"
   },
   {
-    icon: "🛠️",
+    icon: Wrench,
     title: "Build Teams",
     description: "Form ideal research groups with skill matching"
   },
   {
-    icon: "💬",
+    icon: MessageCircle,
     title: "Group Chat",
     description: "Real-time communication with your research teams"
   },
   {
-    icon: "🎓",
+    icon: GraduationCap,
     title: "Premium Courses",
     description: "Access exclusive research methodology courses"
   },
   {
-    icon: "📊",
+    icon: BarChart3,
     title: "Analytics",
     description: "Get insights on your research impact"
   }
@@ -54,25 +63,86 @@ export const courses = [
   {
     title: "How to write a Research Paper",
     instructor: "Dr. Monirul Islam",
-    price: "৳1,500",
+    price: "$150",
     duration: "6 weeks",
     rating: "4.8",
-    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+    image: ResearchWrite
   },
   {
     title: "Literature Review & Reference Management",
     instructor: "Dr. Imdadul Haque",
-    price: "৳1,200",
+    price: "$120",
     duration: "4 weeks",
     rating: "4.9",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+    image: ResearchReview
   },
   {
     title: "Data Analysis and Interpretation for Research",
     instructor: "Dr. Mijanur Rahman",
-    price: "৳1,800",
+    price: "$180",
     duration: "8 weeks",
     rating: "4.7",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+    image: DataAnalytics
   }
 ];
+
+
+export const researchTools = [
+  {
+    name: "Google Scholar",
+    url: "https://scholar.google.com",
+    icon: GraduationCap,
+    color: "blue",
+    description: "A free, comprehensive academic search engine for scholarly articles, theses, and books.",
+  },
+  {
+    name: "Network Analyst",
+    url: "https://www.networkanalyst.ca",
+    icon: Share2,
+    color: "purple",
+    description: "A powerful web tool for analyzing and visualizing gene expression and biological networks.",
+  },
+  {
+    name: "Research Rabbit",
+    url: "https://www.researchrabbit.ai",
+    icon: Rabbit,
+    color: "pink",
+    description: "Visualizes research paper and author connections to help you explore related literature.",
+  },
+  {
+    name: "Zotero",
+    url: "https://www.zotero.org",
+    icon: BookMarked,
+    color: "green",
+    description: "A reference manager that helps you collect, organize, and cite research sources easily.",
+  },
+  {
+    name: "Mendeley",
+    url: "https://www.mendeley.com",
+    icon: BookOpen,
+    color: "indigo",
+    description: "An academic reference manager for organizing papers and collaborating with other researchers.",
+  },
+  {
+    name: "Grammarly",
+    url: "https://www.grammarly.com",
+    icon: SpellCheck,
+    color: "teal",
+    description: "An AI-powered writing assistant for improving grammar, clarity, and tone in research writing.",
+  },
+  {
+    name: "QuillBot",
+    url: "https://www.quillbot.com",
+    icon: Feather,
+    color: "amber",
+    description: "An AI paraphrasing tool that helps rewrite and refine your academic writing effectively.",
+  },
+  {
+    name: "Stelth Writer",
+    url: "https://string-db.org",
+    icon: Dna,
+    color: "red",
+    description: "A database that reveals known and predicted protein-protein interactions.",
+  },
+];
+
