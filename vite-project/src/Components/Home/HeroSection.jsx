@@ -1,5 +1,6 @@
+
 import { Link } from "react-router-dom";
-import {Research} from "../../assets/Images/Research.jpg"
+import Research from "../../assets/Images/Research.jpg";
 
 const HeroSection = () => {
     return (

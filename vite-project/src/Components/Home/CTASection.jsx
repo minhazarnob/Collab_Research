@@ -1,4 +1,6 @@
 
+import { Link } from "react-router-dom";
+
 const CtaSection = () => {
     return (
         <section className="py-20 px-4 bg-blue-600 text-white">

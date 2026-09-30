@@ -1,5 +1,15 @@
 
+import {faqs} from "../../utils/faqData.jsx";
+import { useState } from "react";
+import {Link} from "react-router-dom"
+
 const FaqSection = () => {
+    const [activeAccordion, setActiveAccordion] = useState(null);
+    
+    const toggleAccordion =(index)=>{
+        setActiveAccordion(activeAccordion === index ? null:index);
+    };
+
     return (
         <section className="py-16 px-4 bg-white">
             <div className="max-w-4xl mx-auto">

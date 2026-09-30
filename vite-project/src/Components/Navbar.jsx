@@ -1,5 +1,5 @@
 
-import {useState} from 'react';
+import { useState } from 'react';
 import  { Link, NavLink } from 'react-router-dom';
 import logo from '../assets/Images/logo.png';
 
@@ -21,14 +21,14 @@ const Navbar = () => {
     }
 
     return (
-        <header className="bg-white shadow-md sticky top-0 z-50">
+        <header className="bg-white/20 shadow-md sticky top-0 z-50">
             <div className="max-w-7xl mx-auto flex justify-between items-center p-4">
                 
                 {/* Website logo*/}
-                <link to="/" className="flex items-center">
+                <Link to="/" className="flex items-center">
                     <img src={logo} alt="collab" className='h-8 w-8 mr-2'></img>
-                    <h3 className="text-2xl font-bold text-blue-600"> Collab-Research</h3>
-                </link>
+                    <h3 className="text-2xl font-bold text-orange-600"> Collab-Research</h3>
+                </Link>
 
                 {/* Desktop Menu */}
                 <nav className="space-x-2 hidden md:flex">

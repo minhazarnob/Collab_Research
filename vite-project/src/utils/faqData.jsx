@@ -1,4 +1,5 @@
-const faqs = [
+
+export const faqs = [
   {
     question: "What is CollabResearch?",
     answer: (
