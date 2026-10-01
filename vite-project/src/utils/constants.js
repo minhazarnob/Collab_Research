@@ -43,11 +43,11 @@ export const features = [
 export const testimonials = [
   {
     quote: "CollabResearch helped me find the perfect team for my bioinformatics project",
-    author: "Atikur Rahman, PUST"
+    author: "Md Toukir Ahamed, Pabna University of Science and Technology"
   },
   {
     quote: "Our publication quality improved significantly using the collaboration tools",
-    author: "Kabir Hasan, PUST"
+    author: "Md Niyaz Imtiaz, Pabna University of Science and Technology"
   }
 ];
 
@@ -144,5 +144,47 @@ export const researchTools = [
     color: "red",
     description: "A database that reveals known and predicted protein-protein interactions.",
   },
+];
+
+export const teamMembers = [
+  {
+    name: "Israt Jahan",
+    role: "Project Manager",
+    image: IsratJahan,
+    bio: "Turning ideas into action — leading with clarity, planning with purpose.",
+    social: {
+      facebook: "https://www.facebook.com/Israt.CSE.PUST",
+      linkedin: "https://www.linkedin.com/in/israt-jahan-50054427a/",
+      github: "https://github.com/Isratjahan16"
+    }
+  },
+  {
+    name: "Badol Hossen",
+    role: "Frontend Developer",
+    image: BadolHossen,
+    bio: "The creative mind behind the user experience, turning ideas into interactive, intuitive, and beautiful interfaces.",
+    social: {
+      facebook: "https://www.facebook.com/badolhosen.CSE.PUST/",
+      linkedin: "https://www.linkedin.com/in/badolhossen661/",
+      github: "https://github.com/badolhosen661"
+    }
+  },
+  {
+    name: "Mahadi Hassan",
+    role: "Backend Developer",
+    image: MahadiHasan,
+    bio: "The powerhouse behind the scenes, building the logic, database, and infrastructure.",
+    social: {
+      facebook: "https://www.facebook.com/mahadi.hasan.CSE.PUST",
+      linkedin: "https://www.linkedin.com/in/mahadi-hasan-0259b7276/",
+      github: "https://github.com/Mahadi210110"
+    }
+  }
+];
+
+export const investors = [
+    "Pabna University Research Fund",
+    "Bangladesh Science Foundation",
+    "PUST Research Society"
 ];
 

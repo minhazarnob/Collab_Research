@@ -26,7 +26,7 @@ const ResearchTools = () => {
                 href={tool.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-blue-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 p-6 border border-blue-100"
+                className="bg-cyan-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 p-6 border border-blue-100"
               >
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 mr-4 rounded-lg flex items-center justify-center bg-white">
