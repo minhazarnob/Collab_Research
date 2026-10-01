@@ -7,7 +7,7 @@ import Landing from "./Components/Landing";
 import Profile from "./Components/Profile";
 import AddResearch from "./Components/AddResearch";
 import AddPublishedResearch from "./Components/AddPublishedResearch";
-import About from "./Components/About"; 
+import About from "./pages/About"; 
 import Privacy from './Components/Privacy';
 import Contact from './Components/Contact';
 import VerifyEmail from "./Components/VerifyEmail";
@@ -19,13 +19,14 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About/>}/>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/landing" element={<Landing />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/add-research" element={<AddResearch />} />
         <Route path="/add-research/published" element={<AddPublishedResearch />} />
-        <Route path="/about" element={<About />} /> 
+        {/* <Route path="/about" element={<About />} />  */}
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/verify-email" element={<VerifyEmail />} />

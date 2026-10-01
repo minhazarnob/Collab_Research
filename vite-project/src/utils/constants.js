@@ -3,9 +3,12 @@ import {Users, TrendingUp, MessageCircle} from "lucide-react";
 import {Wrench, GraduationCap, BarChart3} from "lucide-react";
 import {Share2,Rabbit,BookMarked,SpellCheck} from "lucide-react";
 import {Feather,BookOpen,Dna} from "lucide-react";
-import ResearchWrite from "../assets/Images/Reaearch-write.jpg"
-import ResearchReview from "../assets/Images/Research-review.jpg"
-import DataAnalytics from "../assets/Images/Data_Analytics.jpg"
+import ResearchWrite from "../assets/Images/Reaearch-write.jpg";
+import ResearchReview from "../assets/Images/Research-review.jpg";
+import DataAnalytics from "../assets/Images/Data_Analytics.jpg";
+import Minhaz from "../assets/Images/minhaz.jpg";
+import Johurul from "../assets/Images/zohurul.jpg"
+import Zohab from "../assets/Images/zohab.jpg"
 
 export const features = [
   {
@@ -148,9 +151,9 @@ export const researchTools = [
 
 export const teamMembers = [
   {
-    name: "Israt Jahan",
+    name: "Minhaz Arnob",
     role: "Project Manager",
-    image: IsratJahan,
+    image: Minhaz,
     bio: "Turning ideas into action — leading with clarity, planning with purpose.",
     social: {
       facebook: "https://www.facebook.com/Israt.CSE.PUST",
@@ -159,9 +162,9 @@ export const teamMembers = [
     }
   },
   {
-    name: "Badol Hossen",
-    role: "Frontend Developer",
-    image: BadolHossen,
+    name: "Johurul Islam",
+    role: "Researcher",
+    image: Johurul,
     bio: "The creative mind behind the user experience, turning ideas into interactive, intuitive, and beautiful interfaces.",
     social: {
       facebook: "https://www.facebook.com/badolhosen.CSE.PUST/",
@@ -170,9 +173,9 @@ export const teamMembers = [
     }
   },
   {
-    name: "Mahadi Hassan",
-    role: "Backend Developer",
-    image: MahadiHasan,
+    name: "Abu Zohab",
+    role: "Researcher",
+    image: Zohab,
     bio: "The powerhouse behind the scenes, building the logic, database, and infrastructure.",
     social: {
       facebook: "https://www.facebook.com/mahadi.hasan.CSE.PUST",
