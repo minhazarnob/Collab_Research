@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../assets/Images/logo.png';
@@ -6,6 +7,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const links = [
+     { to: "/", label: "Home" },
     { to: "/about", label: "About" },
     { to: "/login", label: "Login" },
     { to: "/register", label: "Sign Up" },

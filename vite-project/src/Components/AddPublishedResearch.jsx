@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AIImage from '../assets/Images/AIImagenew.JPG';
 import machineLearning from '../assets/Images/machinelearning.JPG';
@@ -6,6 +7,7 @@ import deeplearing from '../assets/Images/deeplearning.jpeg';
 import bio from '../assets/Images/bioinfor.jpg';
 import computervision from '../assets/Images/Computervision.JPG';
 import quantumimage from '../assets/Images/quantum.jpg';
+
 // Define category images mapping
 const categoryImages = {
   "AI": AIImage,

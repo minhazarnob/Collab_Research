@@ -5,11 +5,11 @@ import Login from "./Components/Login";
 import Register from "./Components/Register";
 import Landing from "./Components/Landing";
 import Profile from "./Components/Profile";
-import AddResearch from "./Components/AddResearch";
+import AddResearch from "./pages/AddResearch";
 import AddPublishedResearch from "./Components/AddPublishedResearch";
 import About from "./pages/About"; 
 import Privacy from './Components/Privacy';
-import Contact from './Components/Contact';
+import Contact from "./pages/Contact";
 import VerifyEmail from "./Components/VerifyEmail";
 import AddResearchForm from "./Components/AddResearchForm";
 import TermsComponent from "./Components/Terms";
@@ -26,11 +26,10 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/add-research" element={<AddResearch />} />
         <Route path="/add-research/published" element={<AddPublishedResearch />} />
-        {/* <Route path="/about" element={<About />} />  */}
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/verify-email" element={<VerifyEmail />} />
-        <Route path="/add-research" element={<AddResearchForm />} />
+        {/* <Route path="/add-research" element={<AddResearchForm />} /> */}
         <Route path="/terms" element={<TermsComponent />} /> {/* ✅ Added About Route */}
       </Routes>
     </BrowserRouter>

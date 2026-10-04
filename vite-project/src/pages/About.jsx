@@ -19,7 +19,7 @@ const About = () => {
             <OurTeam/>
             <Investors/>
             <Affiliations/>
-            <Footer/>   */}
+            <Footer/>
         </div>
     );
 };
