@@ -7,6 +7,7 @@ import deeplearing from '../assets/Images/deeplearning.jpeg';
 import bio from '../assets/Images/bioinfor.jpg';
 import computervision from '../assets/Images/Computervision.JPG';
 import quantumimage from '../assets/Images/quantum.jpg';
+import { Check, UploadCloud,ArrowLeft } from "lucide-react";
 
 // Define category images mapping
 const categoryImages = {
@@ -26,9 +27,7 @@ const AddPublishedResearch = () => {
     "Conference Paper",
     "Book Chapter",
     "Review Article",
-    "Short Communication",
     "Editorial",
-    "Letter",
     "Other"
   ];
 
@@ -45,17 +44,17 @@ const AddPublishedResearch = () => {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const handleChange = (event) => {
+    const { name, value } = event.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleFileChange = (e) => {
-    setFormData(prev => ({ ...prev, file: e.target.files[0] }));
+  const handleFileChange = (event) => {
+    setFormData(prev => ({ ...prev, file: event.target.files[0] }));
   };
 
-const handleSubmit = (e) => {
-  e.preventDefault();
+const handleSubmit = (event) => {
+  event.preventDefault();
   
   // Split tags into an array (e.g., ["AI", "Bioinformatics"])
   const tagsArray = formData.tags.split(',').map(tag => tag.trim());
@@ -101,10 +100,11 @@ const handleSubmit = (e) => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+
       {/* Header */}
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-          <Link to="" className="text-xl font-bold text-blue-600">Collab Research</Link>
+          <Link to="" className="text-3xl font-bold text-orange-600">Collab Research</Link>
           <div className="flex items-center space-x-4">
             <Link 
               to="/profile" 
@@ -114,6 +114,7 @@ const handleSubmit = (e) => {
                 {JSON.parse(localStorage.getItem("user"))?.firstName?.charAt(0) || 'BH'}
               </span>
             </Link>
+
           </div>
         </div>
       </header>
@@ -124,9 +125,7 @@ const handleSubmit = (e) => {
         {showConfirmation && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
             <div className="bg-white p-8 rounded-lg max-w-md text-center">
-              <svg className="w-16 h-16 text-green-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-              </svg>
+              <Check className="w-16 h-16 text-green-500 mx-auto mb-4" strokeWidth={2} />
               <h2 className="text-2xl font-bold mb-2">Publication Submitted!</h2>
               <p className="text-gray-600 mb-6">Your research has been successfully published.</p>
               <p className="text-gray-500 text-sm">Redirecting to homepage...</p>
@@ -134,17 +133,17 @@ const handleSubmit = (e) => {
           </div>
         )}
 
-        <h1 className="text-3xl font-bold mb-6 text-gray-800">Your Publication</h1>
+        <h1 className="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-purple-400">Your Publication</h1>
         
         <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md">
           {/* Publication Type Dropdown */}
           <div className="mb-8">
-            <h2 className="text-xl font-semibold mb-4">Publication Type *</h2>
+            <h3 className="text-2xl font-semibold mb-4">Publication type*</h3>
             <select
               name="publicationType"
               value={formData.publicationType}
               onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full p-3 text-lg border border-gray-300 rounded-lg focus:ring-1 focus:ring-orange-500 focus:border-transparent"
               required
             >
               <option value="">Select publication type</option>
@@ -156,8 +155,8 @@ const handleSubmit = (e) => {
 
           {/* File Upload */}
           <div className="mb-8">
-            <h2 className="text-xl font-semibold mb-4">Upload File (Optional)</h2>
-            <label className="block border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer hover:border-blue-500 transition">
+            <h3 className="text-2xl font-semibold mb-4">Upload File</h3>
+            <label className="block border-2 border-dashed border-gray-400 rounded-lg p-6 text-center cursor-pointer hover:border-orange-400 transition">
               <input 
                 type="file" 
                 className="hidden" 
@@ -165,11 +164,9 @@ const handleSubmit = (e) => {
                 accept=".pdf,.doc,.docx,.ppt,.pptx"
               />
               <div className="flex flex-col items-center justify-center">
-                <svg className="w-10 h-10 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
-                </svg>
-                <p className="text-gray-600 mb-1">Click to upload or drag and drop</p>
-                <p className="text-xs text-gray-500">PDF, DOC, PPT (Max. 10MB)</p>
+                <UploadCloud className="w-10 h-10 text-gray-400 mb-2" strokeWidth={2} />
+                <p className="text-gray-600 mb-1 text-lg">Click to upload or drag and drop</p>
+                <p className="t text-gray-500 text-sm font-medium">PDF, DOC, PPT (Max. 10MB)</p>
                 {formData.file && (
                   <p className="mt-2 text-sm text-blue-600">{formData.file.name}</p>
                 )}
@@ -179,28 +176,28 @@ const handleSubmit = (e) => {
 
           {/* Title */}
           <div className="mb-8">
-            <h2 className="text-xl font-semibold mb-4">Title *</h2>
+            <h3 className="text-2xl font-semibold mb-4">Title*</h3>
             <input
               type="text"
               name="title"
               value={formData.title}
               onChange={handleChange}
-              placeholder="Enter the title of your publication"
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              placeholder="Enter title of publication"
+              className="w-full p-3 text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               required
             />
           </div>
 
           {/* Author Name */}
           <div className="mb-8">
-            <h2 className="text-xl font-semibold mb-4">Author Name(s) *</h2>
+            <h3 className="text-2xl font-semibold mb-4">Author Name*</h3>
             <input
               type="text"
               name="authorName"
               value={formData.authorName}
               onChange={handleChange}
               placeholder="Enter author names (comma separated if multiple)"
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full p-3 text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               required
             />
           </div>
@@ -208,60 +205,58 @@ const handleSubmit = (e) => {
 
           {/* Description */}
           <div className="mb-8">
-            <h2 className="text-xl font-semibold mb-4">Description (Optional)</h2>
+            <h3 className="text-2xl font-semibold mb-4">Description</h3>
             <textarea
               name="description"
               value={formData.description}
               onChange={handleChange}
               rows="3"
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              placeholder="Additional description or notes about your publication"
+              className="w-full text-lg p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              placeholder="Additional description about your publication"
             />
           </div>
 
           {/* DOI */}
           <div className="mb-8">
-            <h2 className="text-xl font-semibold mb-4">DOI (Optional)</h2>
+            <h3 className="text-2xl font-semibold mb-4">DOI</h3>
             <input
               type="text"
               name="doi"
               value={formData.doi}
               onChange={handleChange}
               placeholder="Enter publication DOI (e.g., 10.1234/abc.2023)"
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full text-lg p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
 
           {/* Tags */}
-<div className="mb-8">
-  <h2 className="text-xl font-semibold mb-4">Tags *</h2>
-  <input
-    type="text"
-    name="tags"
-    value={formData.tags}
-    onChange={handleChange}
-    placeholder="Enter comma-separated tags (e.g., AI, Machine Learning, Bioinformatics)"
-    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-    required
-  />
-  <p className="text-sm text-gray-500 mt-1">These will help others discover your research</p>
-</div>
+          <div className="mb-8">
+            <h3 className="text-2xl font-semibold mb-4">Tags*</h3>
+            <input
+              type="text"
+              name="tags"
+              value={formData.tags}
+              onChange={handleChange}
+              placeholder="Enter comma-separated tags (e.g., AI, Machine Learning, Bioinformatics)"
+              className="w-full text-lg p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              required
+            />
+            <p className="text-lg text-gray-500 mt-2">These will help others discover your research</p>
+          </div>
 
 
           {/* Submit Button */}
           <div className="flex justify-between items-center">
             <Link 
               to="/add-research" 
-              className="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center"
+              className="text-blue-600 hover:text-blue-800 text-xl font-medium inline-flex items-center"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
-              </svg>
-              Back to Research Types
+              <ArrowLeft className="h-5 w-5 mr-1" />
+              Back to Research
             </Link>
             <button
               type="submit"
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-medium"
+              className="bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-white-700 transition font-medium cursor-pointer"
             >
               Submit Publication 
             </button>

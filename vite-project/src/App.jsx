@@ -6,12 +6,12 @@ import Register from "./Components/Register";
 import Landing from "./Components/Landing";
 import Profile from "./Components/Profile";
 import AddResearch from "./pages/AddResearch";
-import AddPublishedResearch from "./Components/AddPublishedResearch";
+import AddPublishedResearch from "./pages/AddPublishedResearch";
 import About from "./pages/About"; 
 import Privacy from './Components/Privacy';
 import Contact from "./pages/Contact";
 import VerifyEmail from "./Components/VerifyEmail";
-import AddResearchForm from "./Components/AddResearchForm";
+import AddResearchForm from "./pages/AddResearchForm";
 import TermsComponent from "./Components/Terms";
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/verify-email" element={<VerifyEmail />} />
-        {/* <Route path="/add-research" element={<AddResearchForm />} /> */}
+        <Route path="/research-form" element={<AddResearchForm />} />
         <Route path="/terms" element={<TermsComponent />} /> {/* ✅ Added About Route */}
       </Routes>
     </BrowserRouter>

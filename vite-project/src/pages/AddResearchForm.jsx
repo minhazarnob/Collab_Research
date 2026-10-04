@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import Artificial from "../assets/Images/Artificial Intelligence.jpg"
+import Machine from "../assets/Images/Machine learning.jpg"
 
 // Define category images mapping
 const categoryImages = {
-  "AI": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-  "Machine Learning": "https://images.unsplash.com/photo-1572445271210-0a8856df7f7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+  "AI": Artificial,
+  "Machine Learning": Machine,
   "Deep Learning": "https://images.unsplash.com/photo-1572445271210-0a8856df7f7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
   "Bioinformatics": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
   "Quantum Computing": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
@@ -26,15 +28,12 @@ const AddResearchForm = () => {
     // Remove image from form state since we'll set it automatically
   });
 
-  const handleChange = (e) => {
+  const handleChange = (event) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setFormData(prev => ({...prev,[name]: value}));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (event) => {
     e.preventDefault();
     
     // Process tags - split by comma and trim whitespace
@@ -67,68 +66,69 @@ const AddResearchForm = () => {
 
   return (
     <div className="max-w-3xl mx-auto p-6">
-      <h1 className="text-2xl font-bold mb-6">
+      <h3 className="text-3xl font-bold mb-6 bg-clip-text bg-gradient-to-r text-transparent from-indigo-500 to-pink-500">
         Add New {researchType ? researchType.charAt(0).toUpperCase() + researchType.slice(1) : 'Research'}
-      </h1>
+      </h3>
+
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Title</label>
+          <label className="block text-lg font-medium text-gray-700 mb-1">Title</label>
           <input
             type="text"
             name="title"
             value={formData.title}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded-md"
+            className="w-full p-2 border border-gray-300 rounded-md hover:border-orange-600"
             required
           />
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Authors</label>
+          <label className="block text-lg font-medium text-gray-700 mb-1">Authors</label>
           <input
             type="text"
             name="authors"
             value={formData.authors}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded-md"
+            className="w-full p-2 border border-gray-300 rounded-md hover:border-orange-600"
             required
           />
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Journal/Conference</label>
+          <label className="block text-lg font-medium text-gray-700 mb-1">Journal/Conference</label>
           <input
             type="text"
             name="journal"
             value={formData.journal}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded-md"
+            className="w-full p-2 border border-gray-300 rounded-md hover:border-orange-600"
           />
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Abstract</label>
+          <label className="block text-lg font-medium text-gray-700 mb-1">Abstract</label>
           <textarea
             name="abstract"
             value={formData.abstract}
             onChange={handleChange}
             rows="5"
-            className="w-full p-2 border border-gray-300 rounded-md"
+            className="w-full p-2 border border-gray-300 rounded-md hover:border-orange-600"
             required
           />
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-lg font-medium text-gray-700 mb-1">
             Tags (comma separated)
-            <span className="text-xs text-gray-500 ml-1">e.g., AI, Machine Learning, Bioinformatics</span>
+            <span className="text-sm text-gray-500 ml-1">e.g., AI, Machine Learning, Bioinformatics</span>
           </label>
           <input
             type="text"
             name="tags"
             value={formData.tags}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded-md"
+            className="w-full p-2 border border-gray-300 rounded-md hover:border-orange-600"
             placeholder="AI, Machine Learning, Bioinformatics"
             required
           />
@@ -138,13 +138,13 @@ const AddResearchForm = () => {
           <button
             type="button"
             onClick={() => navigate('/Landing')}
-            className="px-4 py-2 border border-gray-300 rounded-md"
+            className="px-4 py-2 text-lg border border-gray-300 rounded-md hover:bg-orange-600 hover:text-white"
           >
             Cancel
           </button>
           <button
             type="submit"
-            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+            className="px-4 py-2 text-lg bg-orange-600 text-white rounded-md hover:bg-white hover:border-orange-600 hover:text-black"
           >
             Submit Research
           </button>
