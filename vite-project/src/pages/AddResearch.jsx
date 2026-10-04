@@ -48,7 +48,7 @@ const AddResearch = () => {
       {/* Header */}
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-          <Link to="/landing" className="text-xl font-bold text-blue-600">Collab Research</Link>
+          <Link to="/landing" className="text-2xl font-bold text-orange-600">Collab Research</Link>
           <div className="flex items-center space-x-4">
             <Link
               to="/profile"
@@ -78,16 +78,18 @@ const AddResearch = () => {
                 key={type.id}
                 to={type.route}
                 state={{ researchType: type.id }}
-                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all border border-gray-200 hover:border-orange-600 group"
+                className="bg-white/50 p-6 rounded-xl shadow-sm hover:shadow-md transition-all border border-gray-200 hover:border-orange-600 group"
               >
                 <div className="flex flex-col items-center text-center">
                   <div className="mb-4 text-gray-600 group-hover:text-orange-600 transition-colors">
-                    <Icon className="w-10 h-10" />
+                    <Icon className="w-10 h-10"/>
                   </div>
-                  <h2 className="text-xl font-semibold mb-2 text-gray-800 group-hover:text-blue-600 transition-colors">
+
+                  <h3 className="text-xl font-semibold mb-2 text-gray-800 group-hover:text-orange-600 transition-colors">
                     {type.title}
-                  </h2>
-                  <p className="text-gray-500 text-sm">{type.description}</p>
+                  </h3>
+
+                  <p className="text-gray-600 text-lg font-normal">{type.description}</p>
                 </div>
               </Link>
             );
@@ -97,9 +99,9 @@ const AddResearch = () => {
         <div className="mt-10 text-center">
           <Link
             to="/landing"
-            className="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center"
+            className="text-blue-800 hover:text-orange-600 text-xl font-medium inline-flex items-center"
           >
-            <ArrowLeft className="h-5 w-5 mr-1" />
+            <ArrowLeft className="h-5 w-5 mr-1 text-xl font-medium" />
             Back to Dashboard
           </Link>
         </div>
