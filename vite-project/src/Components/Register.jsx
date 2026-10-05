@@ -1,5 +1,8 @@
+
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { AlertCircle } from "lucide-react";
+import { Loader2 } from "lucide-react";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -23,15 +26,12 @@ const Register = () => {
     'Non-profit Researcher'
   ];
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+  const handleChange = (event) => {
+    setFormData({...formData,[event.target.name]: event.target.value});
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     setError('');
     setIsSubmitting(true);
 
@@ -101,24 +101,22 @@ const Register = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
       <div className="w-full max-w-md bg-white rounded-xl shadow-2xl overflow-hidden">
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-700 p-6 text-center">
-          <h1 className="text-2xl font-bold text-white">Create CollabResearch Account</h1>
-          <p className="text-blue-100 mt-2">Join our research community</p>
+
+        <div className="bg-gradient-to-r from-orange-600 to-pink-700 p-6 text-center">
+          <h3 className="text-2xl font-bold text-white">Create CollabResearch Account</h3>
         </div>
 
         <form onSubmit={handleSubmit} className="p-8 space-y-6">
           {error && (
             <div className="p-3 bg-red-50 text-red-600 rounded-lg flex items-center">
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
+              <AlertCircle className="w-5 h-5 mr-2" />
               {error}
             </div>
           )}
 
           <div className="space-y-4">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="name" className="block text-lg font-medium text-gray-700 mb-1">
                 Full Name
               </label>
               <input
@@ -127,14 +125,14 @@ const Register = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-pink-600 focus:border-transparent transition-all"
                 placeholder="John Doe"
                 required
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="email" className="block text-lg font-medium text-gray-700 mb-1">
                 Email Address
               </label>
               <input
@@ -143,14 +141,14 @@ const Register = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-pink-600 focus:border-transparent transition-all"
                 placeholder="your@gmail.com"
                 required
               />
             </div>
 
             <div>
-              <label htmlFor="researcherType" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="researcherType" className="block text-lg font-medium text-gray-700 mb-1">
                 I am a...
               </label>
               <select
@@ -158,7 +156,7 @@ const Register = () => {
                 name="researcherType"
                 value={formData.researcherType}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all appearance-none bg-white"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-pink-600 focus:border-transparent transition-all appearance-none bg-white"
                 required
               >
                 {researcherTypes.map((type) => (
@@ -170,7 +168,7 @@ const Register = () => {
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="password" className="block text-lg font-medium text-gray-700 mb-1">
                 Password
               </label>
               <input
@@ -179,16 +177,16 @@ const Register = () => {
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-pink-600 focus:border-transparent transition-all"
                 placeholder="••••••••"
                 minLength="8"
                 required
               />
-              <p className="text-xs text-gray-500 mt-1">Minimum 8 characters</p>
+              <p className="text-sm text-gray-700 mt-1">Minimum 8 characters</p>
             </div>
 
             <div>
-              <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="confirmPassword" className="block text-lg font-medium text-gray-700 mb-1">
                 Confirm Password
               </label>
               <input
@@ -197,7 +195,7 @@ const Register = () => {
                 name="confirmPassword"
                 value={formData.confirmPassword}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-pink-600 focus:border-transparent transition-all"
                 placeholder="••••••••"
                 required
               />
@@ -207,16 +205,13 @@ const Register = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className={`w-full bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-3 px-4 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-800 transition-all shadow-md hover:shadow-lg ${
+            className={`w-full bg-gradient-to-r from-orange-600 to-pink-600 text-white py-3 px-4 rounded-lg font-semibold hover:from-orange-700 hover:to-pink-800 transition-all shadow-md hover:shadow-lg ${
               isSubmitting ? 'opacity-75 cursor-not-allowed' : ''
             }`}
           >
             {isSubmitting ? (
-              <span className="flex items-center justify-center">
-                <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
+              <span className="flex items-center justify-center text-lg">
+                <Loader2 className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" />
                 Creating Account...
               </span>
             ) : (
@@ -224,9 +219,9 @@ const Register = () => {
             )}
           </button>
 
-          <div className="text-center text-sm text-gray-600">
+          <div className="text-center text-lg text-gray-600">
             Already have an account?{' '}
-            <Link to="/login" className="text-blue-600 hover:text-blue-800 font-medium">
+            <Link to="/login" className="text-orange-600 hover:text-pink-600 font-bold">
               Sign in
             </Link>
           </div>

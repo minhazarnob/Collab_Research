@@ -107,7 +107,7 @@ const Login = () => {
                 disabled={isLoading}
                 className={`w-full flex justify-center text-lg py-3 px-4 border border-transparent rounded-lg 
                   shadow-sm text-white font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 
-                  focus:ring-pink-500 transition ${isLoading ? 'bg-pink-500' : 'bg-pink-600 hover:bg-pink-700 hover:cursor-pointer'}`}
+                  focus:ring-pink-500 transition ${isLoading ? 'bg-pink-500' : 'bg-gradient-to-r from-orange-600 to-pink-600 hover:bg-pink-700 hover:cursor-pointer'}`}
               >
                 {isLoading ? (
                   <>
@@ -149,7 +149,7 @@ const Login = () => {
         <div className="mt-6 text-center">
           <p className="text-lg text-gray-600">
             Don't have an account?{' '}
-            <Link to="/register" className="font-medium text-orange-600 hover:text-pink-500 hover:cursor-pointer">
+            <Link to="/register" className="font-bold text-orange-600 hover:text-pink-500 hover:cursor-pointer">
               Sign up
             </Link>
           </p>
