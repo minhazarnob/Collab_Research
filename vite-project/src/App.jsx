@@ -2,13 +2,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Register from "./Components/Register";
+import Register from "./pages/Register";
 import Landing from "./Components/Landing";
 import Profile from "./Components/Profile";
 import AddResearch from "./pages/AddResearch";
 import AddPublishedResearch from "./pages/AddPublishedResearch";
 import About from "./pages/About"; 
-import Privacy from './Components/Privacy';
+import Privacy from './pages/Privacy';
 import Contact from "./pages/Contact";
 import VerifyEmail from "./Components/VerifyEmail";
 import AddResearchForm from "./pages/AddResearchForm";

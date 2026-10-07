@@ -1,9 +1,11 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 
 const Privacy = () => {
+
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+
       {/* Header */}
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
@@ -20,24 +22,26 @@ const Privacy = () => {
       <main className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="bg-white shadow overflow-hidden rounded-lg">
           <div className="px-6 py-8 sm:p-10">
-            <h1 className="text-3xl font-bold text-gray-900 mb-8">Privacy Policy</h1>
-            <p className="text-gray-600 mb-6">Last updated: {new Date().toLocaleDateString()}</p>
+            <h3 className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-pink-800">Privacy policy</h3>
+            <p className="text-gray-700 mb-6 text-lg">
+              Last updated: <span className="text-gray-600 text-lg font-bold">{new Date().toLocaleDateString()}</span>
+            </p>
 
             <div className="prose max-w-none">
               <section className="mb-10">
-                <h2 className="text-2xl font-semibold text-gray-800 mb-4">1. Introduction</h2>
-                <p className="text-gray-600 mb-4">
+                <h3 className="text-2xl font-semibold text-pink-600 mb-4">1. Introduction</h3>
+                <p className="text-gray-700 text-xl mb-4">
                   Welcome to CollabResearch ("we," "our," or "us"). We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our academic collaboration platform.
                 </p>
               </section>
 
               <section className="mb-10">
-                <h2 className="text-2xl font-semibold text-gray-800 mb-4">2. Information We Collect</h2>
+                <h3 className="text-2xl font-semibold text-pink-600 mb-4">2. Information we collect</h3>
                 <h3 className="text-xl font-medium text-gray-700 mb-2">2.1 Personal Information</h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-700 text-xl mb-4">
                   When you register, we may collect:
                 </p>
-                <ul className="list-disc pl-6 text-gray-600 mb-4 space-y-2">
+                <ul className="list-disc pl-6 text-gray-600 mb-4 space-y-2 text-lg">
                   <li>Full name and academic title</li>
                   <li>Email address and institutional affiliation</li>
                   <li>Research interests and publication history</li>
@@ -45,10 +49,10 @@ const Privacy = () => {
                 </ul>
 
                 <h3 className="text-xl font-medium text-gray-700 mb-2">2.2 Usage Data</h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-700 mb-4 text-lg">
                   We automatically collect:
                 </p>
-                <ul className="list-disc pl-6 text-gray-600 mb-4 space-y-2">
+                <ul className="list-disc pl-6 text-gray-600 mb-4 space-y-2 text-lg">
                   <li>IP address and browser type</li>
                   <li>Pages visited and time spent</li>
                   <li>Collaboration patterns and research connections</li>
@@ -56,8 +60,8 @@ const Privacy = () => {
               </section>
 
               <section className="mb-10">
-                <h2 className="text-2xl font-semibold text-gray-800 mb-4">3. How We Use Your Information</h2>
-                <ul className="list-disc pl-6 text-gray-600 mb-4 space-y-2">
+                <h3 className="text-2xl font-semibold text-pink-600 mb-4">3. How we use your information</h3>
+                <ul className="list-disc pl-6 text-gray-600 mb-4 space-y-2 text-lg">
                   <li>Facilitate academic collaborations</li>
                   <li>Personalize your research matching experience</li>
                   <li>Improve our platform and services</li>
@@ -67,27 +71,23 @@ const Privacy = () => {
               </section>
 
               <section className="mb-10">
-                <h2 className="text-2xl font-semibold text-gray-800 mb-4">4. Data Sharing</h2>
-                <p className="text-gray-600 mb-4">
-                  We may share information with:
-                </p>
-                <ul className="list-disc pl-6 text-gray-600 mb-4 space-y-2">
+                <h3 className="text-2xl font-semibold text-pink-600 mb-4">4. Data Sharing</h3>
+                <p className="text-gray-700 mb-4 text-xl">We may share information with:</p>
+                <ul className="list-disc pl-6 text-gray-600 mb-4 space-y-2 text-lg">
                   <li>Other researchers in your collaboration network</li>
                   <li>Academic institutions for verification purposes</li>
                   <li>Service providers who assist our operations</li>
                   <li>When required by law or to protect rights</li>
                 </ul>
-                <p className="text-gray-600">
-                  We never sell your personal data to third parties.
-                </p>
+                <p className="text-gray-700 text-xl">We never sell your personal data to third parties.</p>
               </section>
 
               <section className="mb-10">
-                <h2 className="text-2xl font-semibold text-gray-800 mb-4">5. Data Security</h2>
-                <p className="text-gray-600 mb-4">
+                <h3 className="text-2xl font-semibold text-pink-600 mb-4">5. Data Security</h3>
+                <p className="text-gray-700 mb-4 text-xl">
                   We implement appropriate technical and organizational measures including:
                 </p>
-                <ul className="list-disc pl-6 text-gray-600 mb-4 space-y-2">
+                <ul className="list-disc pl-6 text-gray-600 mb-4 space-y-2 text-lg">
                   <li>SSL/TLS encryption for data transmission</li>
                   <li>Regular security audits</li>
                   <li>Access controls and authentication protocols</li>
@@ -95,11 +95,9 @@ const Privacy = () => {
               </section>
 
               <section className="mb-10">
-                <h2 className="text-2xl font-semibold text-gray-800 mb-4">6. Your Rights</h2>
-                <p className="text-gray-600 mb-4">
-                  You have the right to:
-                </p>
-                <ul className="list-disc pl-6 text-gray-600 mb-4 space-y-2">
+                <h3 className="text-2xl font-semibold text-pink-600 mb-4">6. Your Rights</h3>
+                <p className="text-gray-700 mb-4 text-xl">You have the right to:</p>
+                <ul className="list-disc pl-6 text-gray-600 mb-4 space-y-2 text-lg">
                   <li>Access and request a copy of your data</li>
                   <li>Rectify inaccurate information</li>
                   <li>Request deletion of your data</li>
@@ -109,19 +107,20 @@ const Privacy = () => {
               </section>
 
               <section className="mb-10">
-                <h2 className="text-2xl font-semibold text-gray-800 mb-4">7. Changes to This Policy</h2>
-                <p className="text-gray-600 mb-4">
+                <h3 className="text-2xl font-semibold text-pink-600 mb-4">7. Changes to this policy</h3>
+                <p className="text-gray-700 mb-4 text-xl">
                   We may update this policy periodically. We will notify you of significant changes through platform notifications or email.
                 </p>
               </section>
 
               <section>
-                <h2 className="text-2xl font-semibold text-gray-800 mb-4">8. Contact Us</h2>
-                <p className="text-gray-600">
+                <h3 className="text-2xl font-semibold text-pink-600 mb-4">8. Contact Us</h3>
+                <p className="text-gray-700 text-xl">
                   For privacy-related inquiries, please contact our Data Protection Officer at:
                 </p>
-                <p className="text-blue-600 mt-2">privacy@collabresearch.edu</p>
+                <p className="text-orange-600 mt-2 text-lg">privacy@collabresearch.edu</p>
               </section>
+
             </div>
           </div>
         </div>
@@ -132,18 +131,19 @@ const Privacy = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
-              <h3 className="text-white text-xl font-bold mb-2">CollabResearch</h3>
-              <p>© {new Date().getFullYear()} All rights reserved</p>
+              <h3 className="text-white text-2xl font-bold mb-2">CollabResearch</h3>
+              <p className="text-lg font-normal">© {new Date().getFullYear()} All rights reserved</p>
             </div>
             <div className="flex space-x-6">
-              <Link to="/about" className="hover:text-white">About</Link>
-              <Link to="/privacy" className="hover:text-white">Privacy</Link>
-              <Link to="/terms" className="hover:text-white">Terms</Link>
-              <Link to="/contact" className="hover:text-white">Contact</Link>
+              <Link to="/about" className="hover:text-white text-lg">About</Link>
+              <Link to="/privacy" className="hover:text-white text-lg">Privacy</Link>
+              <Link to="/terms" className="hover:text-white text-lg">Terms</Link>
+              <Link to="/contact" className="hover:text-white text-lg">Contact</Link>
             </div>
           </div>
         </div>
       </footer>
+
     </div>
   );
 };
