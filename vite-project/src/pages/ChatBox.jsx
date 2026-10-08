@@ -1,4 +1,4 @@
-// 1. Create a new file: `src/components/ChatBox.jsx`
+
 import { useState } from 'react';
 
 const ChatBox = () => {

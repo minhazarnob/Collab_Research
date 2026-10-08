@@ -1,37 +1,42 @@
-import React, { useState } from 'react';
+
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const VerifyEmail = () => {
-  const [pin, setPin] = useState(['', '', '', '', '', '']);
-  const [error, setError] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const [isVerified, setIsVerified] = useState(false);
-  const navigate = useNavigate();
 
-  const handleChange = (index, value) => {
+  
+  const [pin, setPin] = useState(['','','','','','']);
+  const [error, setError] = useState('');
+
+  const handleChange = (index,value) => {
     if (!/^\d*$/.test(value)) return;
-    
+
     const newPin = [...pin];
     newPin[index] = value;
     setPin(newPin);
-    
-    // Auto focus next input
-    if (value && index < 5) {
-      document.getElementById(`pin-${index + 1}`).focus();
+
+    // Auto focus to next input
+    if(value && index < 5){
+      const nextIndex = index + 1;
+      const nextId = `pin-${nextIndex}`;
+      const nextInput = document.getElementById(nextId);
+      nextInput.focus();
     }
-    
-    setError('');
   };
 
-  const handleKeyDown = (index, e) => {
-    if (e.key === 'Backspace' && !pin[index] && index > 0) {
+  const handleKeyDown = (index, event) => {
+    if (event.key === 'Backspace' && !pin[index] && index > 0) {
       document.getElementById(`pin-${index - 1}`).focus();
     }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const [isLoading, setIsLoading] = useState(false);
+  const [isVerified, setIsVerified] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     const fullPin = pin.join('');
     
     if (fullPin.length !== 6) {
@@ -65,17 +70,17 @@ const VerifyEmail = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-2">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="w-full max-w-md bg-white rounded-xl shadow-lg overflow-hidden"
       >
-        <div className="bg-blue-600 py-6 px-8 text-center">
-          <h1 className="text-2xl font-bold text-white">Verify Your Email</h1>
-          <p className="text-blue-100 mt-2">
-            {isVerified ? 'Verification successful!' : 'Enter the 6-digit code sent to your email'}
+        <div className="bg-gradient-to-r from-orange-600 to-pink-600 py-6 px-8 text-center">
+          <h3 className="text-3xl font-bold text-white">Verify your email</h3>
+          <p className="text-blue-100 mt-2 text-lg font-normal">
+            {isVerified ? "Verification successful!" : "Enter the 6-digit code sent to your email"}
           </p>
         </div>
 
@@ -91,8 +96,8 @@ const VerifyEmail = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </motion.div>
-              <h2 className="text-xl font-semibold text-gray-800 mb-2">Email Verified Successfully!</h2>
-              <p className="text-gray-600 mb-6">You're being redirected to your dashboard...</p>
+              <h3 className="text-3xl font-semibold text-gray-700 mb-2">Email Verified Successfully!</h3>
+              <p className="text-gray-600 mb-6 text-lg font-normal">You're being redirected to your dashboard...</p>
               <div className="w-full bg-gray-200 rounded-full h-2">
                 <motion.div 
                   className="bg-green-500 h-2 rounded-full"
@@ -115,7 +120,7 @@ const VerifyEmail = () => {
                       value={digit}
                       onChange={(e) => handleChange(index, e.target.value)}
                       onKeyDown={(e) => handleKeyDown(index, e)}
-                      className="w-12 h-12 text-2xl text-center border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"
+                      className="w-12 h-12 text-2xl text-center border-2 border-gray-300 rounded-lg focus:border-orange-600 focus:ring-2 focus:ring-red-600 outline-none transition"
                       autoFocus={index === 0}
                     />
                   ))}
@@ -137,7 +142,7 @@ const VerifyEmail = () => {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className={`w-full py-3 px-4 rounded-lg font-medium text-white transition ${isLoading ? 'bg-blue-400' : 'bg-blue-600 hover:bg-blue-700'}`}
+                  className={`w-full py-3 px-4 rounded-lg bg-gradient-to-r from-orange-600 to-pink-600font-medium text-white text-xl transition ${isLoading ? 'bg-orange-600' : 'bg-pink-600 hover:bg-pink-700'}`}
                 >
                   {isLoading ? (
                     <span className="flex items-center justify-center">
@@ -154,11 +159,11 @@ const VerifyEmail = () => {
               </form>
 
               <div className="mt-6 text-center">
-                <p className="text-gray-600">
+                <p className="text-gray-600 text-lg font-normal">
                   Didn't receive a code?{' '}
                   <button 
                     onClick={resendCode}
-                    className="text-blue-600 hover:text-blue-800 font-medium focus:outline-none"
+                    className="text-orange-600 hover:text-pink-800 font-medium focus:outline-none cursor-pointer"
                   >
                     Resend Code
                   </button>
@@ -166,9 +171,9 @@ const VerifyEmail = () => {
               </div>
 
               <div className="mt-8 pt-6 border-t border-gray-200 text-center">
-                <p className="text-gray-600">
+                <p className="text-gray-600 text-lg font-normal">
                   Need help?{' '}
-                  <Link to="/contact" className="text-blue-600 hover:text-blue-800 font-medium">
+                  <Link to="/contact" className="text-orange-600 hover:text-pink-800 font-medium">
                     Contact Support
                   </Link>
                 </p>

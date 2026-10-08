@@ -1,18 +1,21 @@
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import Landing from "./Components/Landing";
+import Landing from "./pages/Landing";
 import Profile from "./pages/Profile";
 import AddResearch from "./pages/AddResearch";
 import AddPublishedResearch from "./pages/AddPublishedResearch";
 import About from "./pages/About"; 
 import Privacy from './pages/Privacy';
 import Contact from "./pages/Contact";
-import VerifyEmail from "./Components/VerifyEmail";
+import VerifyEmail from "./pages/VerifyEmail";
 import AddResearchForm from "./pages/AddResearchForm";
-import TermsComponent from "./Components/Terms";
+import ChatBox from "./pages/ChatBox";
+
+
 
 function App() {
   return (
@@ -30,7 +33,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/verify-email" element={<VerifyEmail />} />
         <Route path="/research-form" element={<AddResearchForm />} />
-        <Route path="/terms" element={<TermsComponent />} /> {/* ✅ Added About Route */}
+        <Route path="/chatbox" element={<ChatBox/>}/>
       </Routes>
     </BrowserRouter>
   );
