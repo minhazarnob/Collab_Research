@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Landing from "./Components/Landing";
-import Profile from "./Components/Profile";
+import Profile from "./pages/Profile";
 import AddResearch from "./pages/AddResearch";
 import AddPublishedResearch from "./pages/AddPublishedResearch";
 import About from "./pages/About"; 
