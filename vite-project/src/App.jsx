@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import Landing from "./pages/Landing";
+import Landing from "./pages/LandingPage";
 import Profile from "./pages/Profile";
 import AddResearch from "./pages/AddResearch";
 import AddPublishedResearch from "./pages/AddPublishedResearch";
