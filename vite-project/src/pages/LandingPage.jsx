@@ -1,14 +1,15 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 
-import WelcomeBanner from "../components/landing/WelcomeBanner";
-import TabNavigation from "../components/landing/TabNavigation";
-import ResearchTab from "../components/landing/tabs/ResearchTab";
+import { useState, useEffect } from "react";
+import WelcomeBanner from "../Components/landing/WelcomeBanner";
+import TabNavigation from "../Components/landing/TabNavigation";
+import ResearchTab from "../Components/landing/tabs/ResearchTab";
 import CollaboratorTab from "../Components/landing/tabs/CollaboratorTab";
-import GroupsTab from "../components/landing/tabs/GroupsTab";
-import EventsTab from "../components/landing/tabs/EventsTab";
-import ToolsTab from "../components/landing/tabs/ToolsTab";
-import AnalyticsTab from "../components/landing/tabs/AnalyticsTab";
+import GroupsTab from "../Components/landing/tabs/GroupsTab";
+import EventsTab from "../Components/landing/tabs/EventsTab";
+import ToolsTab from "../Components/landing/tabs/ToolsTab";
+import AnalyticsTab from "../Components/landing/tabs/AnalyticsTab";
+import Navigation from "../Components/landing/Navigation"
+import Footer from "../Components/landing/LandingFooter";
 
 import {
   Researchers as sampleResearchers,
@@ -19,22 +20,21 @@ import {
 } from "../utils/landing";
 
 const Landing = () => {
-  // ট্যাব ও নোটিফিকেশন
+ 
   const [activeTab, setActiveTab] = useState("research");
   const [unreadCount] = useState(2);
 
-  // মেসেজ মডাল
+  
   const [showMessageModal, setShowMessageModal] = useState(false);
   const [selectedResearcher, setSelectedResearcher] = useState(null);
 
-  // গ্রুপ
+ 
   const [showCreateGroupModal, setShowCreateGroupModal] = useState(false);
   const [groups, setGroups] = useState([]);
   const [activeGroup, setActiveGroup] = useState(null);
   const [groupMessages, setGroupMessages] = useState([]);
   const [groupMessage, setGroupMessage] = useState("");
 
-  // সক্রিয় গ্রুপ বদলালে মেসেজ লোড
   useEffect(() => {
     setGroupMessages(activeGroup ? activeGroup.messages || [] : []);
   }, [activeGroup]);
@@ -84,8 +84,10 @@ const Landing = () => {
     setActiveGroup((prev) => ({ ...prev, files: [...prev.files, ...newFiles] }));
   };
 
+ 
   return (
     <div className="min-h-screen bg-gray-100">
+      <Navigation activeTab={activeTab} setActiveTab={setActiveTab}/>
       <main className="max-w-7xl mx-auto px-4 py-6 pb-20">
         <WelcomeBanner
           name="Badol Hossen"
@@ -128,6 +130,7 @@ const Landing = () => {
 
         {activeTab === "analytics" && <AnalyticsTab data={analyticsData} />}
       </main>
+      <Footer/>
     </div>
   );
 };

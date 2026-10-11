@@ -34,6 +34,7 @@ function App() {
         <Route path="/verify-email" element={<VerifyEmail />} />
         <Route path="/research-form" element={<AddResearchForm />} />
         <Route path="/chatbox" element={<ChatBox/>}/>
+        
       </Routes>
     </BrowserRouter>
   );

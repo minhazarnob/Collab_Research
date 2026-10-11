@@ -1,5 +1,5 @@
 
-import avatarImage from '../assets/Images/Team1.jpg';
+import avatarImage from '../assets/Images/minhaz.jpg';
 import coverImage from '../assets/Images/Cover.jpg';
 
 export const profileData = {

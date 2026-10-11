@@ -1,8 +1,8 @@
 
 
-import profileImage from "../assets/Images/Team1.jpg";
-import mahadi from "../assets/Images/mahaadi.jpg";
-import israt from "../assets/Images/Israt.jpg";
+import profileImage from "../assets/Images/minhaz.jpg";
+import Zohab from "../assets/Images/zohab.jpg";
+import Zohurul from "../assets/Images/zohurul.jpg";
 import AIImage from "../assets/Images/AIImagenew.JPG";
 import deeplearing from "../assets/Images/deeplearning.jpeg";
 import bio from "../assets/Images/bioinfor.jpg";
@@ -23,17 +23,17 @@ export const  categoryImages = {
 export const Researchers = [
   {
     "id": 1,
-    "name": "Mahadi Hasan",
+    "name": "Abu Zohab Jisan",
     "affiliation": "PUST CSE",
-    "avatar": mahadi,
-    "expertise": ["AI", "Machine Learning"],
+    "avatar": Zohab,
+    "expertise": ["Deep learning", "Machine Learning"],
     "recentWork": "Neural Networks for Image Recognition",
     "collaborationStatus": "Active",
     "sharedProjects": 3
   },
   {
     "id": 2,
-    "name": "Badol Hossen",
+    "name": "Minhaz Shikder",
     "affiliation": "PUST CSE",
     "avatar": profileImage,
     "expertise": ["Quantum Computing", "Physics"],
@@ -43,9 +43,9 @@ export const Researchers = [
   },
   {
     "id": 3,
-    "name": "Israt Jahan",
+    "name": "Zohurul Islam",
     "affiliation": "PUST CSE",
-    "avatar": israt,
+    "avatar": Zohurul,
     "expertise": ["Computer Vision", "Robotics"],
     "recentWork": "Autonomous Navigation Systems",
     "collaborationStatus": "Potential",
@@ -292,5 +292,290 @@ export const sampleEvents = [
     "organizer": "BrainTech Alliance",
     "image": "../src/assets/Images/6.jpeg",
     "tags": ["Neuroscience", "Deep Learning", "Healthcare AI"]
+  }
+];
+
+ export const analyticsData = {
+  citations: {
+    total: 842,
+    monthlyTrend: [45, 60, 52, 70, 85, 90, 110, 95, 80, 75, 85, 100],
+    topPapers: [
+      { title: "Genomic DL", citations: 142 },
+      { title: "Quantum Drug", citations: 95 },
+      { title: "AI in Medicine", citations: 87 },
+    ],
+    byField: [
+      { field: "AI", citations: 320 },
+      { field: "Bioinformatics", citations: 280 },
+      { field: "Quantum", citations: 242 },
+    ],
+  },
+  collaborations: {
+    active: 12,
+    completed: 23,
+    byCountry: [
+      { country: "USA", count: 8 },
+      { country: "UK", count: 5 },
+      { country: "Germany", count: 4 },
+      { country: "Japan", count: 3 },
+      { country: "Others", count: 3 },
+    ],
+    byInstitution: [
+      { institution: "MIT", projects: 4 },
+      { institution: "Stanford", projects: 3 },
+      { institution: "Oxford", projects: 2 },
+    ],
+  },
+  publications: {
+    total: 34,
+    byYear: [
+      { year: 2020, count: 4 },
+      { year: 2021, count: 8 },
+      { year: 2022, count: 10 },
+      { year: 2023, count: 11 },
+    ],
+    byType: [
+      { type: "Journal", count: 22 },
+      { type: "Conference", count: 9 },
+      { type: "Book Chapter", count: 3 },
+    ],
+  },
+  engagement: {
+    profileViews: 1245,
+    researchGateScore: 86,
+    hIndex: 18,
+    i10Index: 32,
+  },
+};
+
+export const researchTools = [
+  // 1. Literature Search
+  {
+    name: "Google Scholar",
+    description: "Comprehensive academic search engine for scholarly literature",
+    category: "Literature Search",
+    link: "https://scholar.google.com",
+    icon: "🔍"
+  },
+  {
+    name: "ResearchRabbit",
+    description: "Discover and visualize paper/author connections",
+    category: "Literature Search",
+    link: "https://www.researchrabbit.ai",
+    icon: "🐇"
+  },
+  {
+    name: "Connected Papers",
+    description: "Explore research landscapes via graph visualizations",
+    category: "Literature Search",
+    link: "https://www.connectedpapers.com",
+    icon: "📊"
+  },
+
+  // 2. Reference Management
+  {
+    name: "Zotero",
+    description: "Free tool to collect, organize, and cite research",
+    category: "Reference Management",
+    link: "https://www.zotero.org",
+    icon: "📚"
+  },
+  {
+    name: "Mendeley",
+    description: "Reference manager + academic social network",
+    category: "Reference Management",
+    link: "https://www.mendeley.com",
+    icon: "👥"
+  },
+  {
+    name: "EndNote",
+    description: "Advanced citation management for large projects",
+    category: "Reference Management",
+    link: "https://endnote.com",
+    icon: "📑"
+  },
+
+  // 3. Writing & Editing
+  {
+    name: "Grammarly",
+    description: "AI writing assistant for clarity/grammar",
+    category: "Writing",
+    link: "https://www.grammarly.com",
+    icon: "✍️"
+  },
+  {
+    name: "QuillBot",
+    description: "Paraphrasing and summarizing tool",
+    category: "Writing",
+    link: "https://www.quillbot.com",
+    icon: "🔄"
+  },
+  {
+    name: "Turnitin",
+    description: "Plagiarism detection for academic integrity",
+    category: "Writing",
+    link: "https://www.turnitin.com",
+    icon: "🔎"
+  },
+
+  // 4. Bioinformatics
+  {
+    name: "Cytoscape",
+    description: "Visualize biological networks",
+    category: "Bioinformatics",
+    link: "https://cytoscape.org",
+    icon: "🧬"
+  },
+  {
+    name: "STRING",
+    description: "Protein-protein interaction database",
+    category: "Bioinformatics",
+    link: "https://string-db.org",
+    icon: "🕸️"
+  },
+  {
+    name: "Enrichr",
+    description: "Gene list enrichment analysis",
+    category: "Bioinformatics",
+    link: "https://maayanlab.cloud/Enrichr",
+    icon: "🧪"
+  },
+
+  // 5. Data Analysis & Visualization (New)
+  {
+    name: "RStudio",
+    description: "Open-source IDE for R (statistics & graphs)",
+    category: "Data Analysis",
+    link: "https://www.rstudio.com",
+    icon: "📈"
+  },
+  {
+    name: "Tableau",
+    description: "Create interactive data dashboards",
+    category: "Data Analysis",
+    link: "https://www.tableau.com",
+    icon: "📊"
+  },
+  {
+    name: "Plotly",
+    description: "Python/R/JS library for dynamic visualizations",
+    category: "Data Analysis",
+    link: "https://plotly.com",
+    icon: "📉"
+  },
+
+  // 6. Collaboration & Project Management (New)
+  {
+    name: "Notion",
+    description: "All-in-one workspace for research notes",
+    category: "Collaboration",
+    link: "https://www.notion.so",
+    icon: "🗂️"
+  },
+  {
+    name: "Trello",
+    description: "Kanban-style task organization",
+    category: "Collaboration",
+    link: "https://trello.com",
+    icon: "📋"
+  },
+  {
+    name: "Slack",
+    description: "Team communication for labs/groups",
+    category: "Collaboration",
+    link: "https://slack.com",
+    icon: "💬"
+  },
+
+  // 7. Machine Learning & AI (New)
+  {
+    name: "TensorFlow",
+    description: "Open-source ML framework",
+    category: "Machine Learning",
+    link: "https://www.tensorflow.org",
+    icon: "🤖"
+  },
+  {
+    name: "Hugging Face",
+    description: "NLP models and datasets",
+    category: "Machine Learning",
+    link: "https://huggingface.co",
+    icon: "🦾"
+  },
+  {
+    name: "Kaggle",
+    description: "Competitions and datasets for ML practice",
+    category: "Machine Learning",
+    link: "https://www.kaggle.com",
+    icon: "🏆"
+  },
+
+  // 8. Lab & Experiment Tools (New)
+  {
+    name: "Benchling",
+    description: "Electronic lab notebook (ELN) for biology",
+    category: "Lab Tools",
+    link: "https://www.benchling.com",
+    icon: "🔬"
+  },
+  {
+    name: "LabArchives",
+    description: "Cloud-based ELN for research data",
+    category: "Lab Tools",
+    link: "https://www.labarchives.com",
+    icon: "📓"
+  },
+  {
+    name: "SnapGene",
+    description: "Molecular biology software for cloning/design",
+    category: "Lab Tools",
+    link: "https://www.snapgene.com",
+    icon: "🧫"
+  },
+
+  // 9. Open Access & Preprints (New)
+  {
+    name: "arXiv",
+    description: "Preprints for physics, CS, and more",
+    category: "Open Access",
+    link: "https://arxiv.org",
+    icon: "📄"
+  },
+  {
+    name: "bioRxiv",
+    description: "Biology preprints",
+    category: "Open Access",
+    link: "https://www.biorxiv.org",
+    icon: "🧬"
+  },
+  {
+    name: "Zenodo",
+    description: "Open-access repository for datasets/code",
+    category: "Open Access",
+    link: "https://zenodo.org",
+    icon: "📦"
+  },
+
+  // 10. Research Publications (Existing + New)
+  {
+    name: "IEEE Xplore",
+    description: "Engineering and computer science research",
+    category: "Publications",
+    link: "https://ieeexplore.ieee.org",
+    icon: "⚡"
+  },
+  {
+    name: "Elsevier ScienceDirect",
+    description: "Peer-reviewed STEM literature",
+    category: "Publications",
+    link: "https://www.sciencedirect.com",
+    icon: "📜"
+  },
+  {
+    name: "SpringerLink",
+    description: "Journals and books across disciplines",
+    category: "Publications",
+    link: "https://link.springer.com",
+    icon: "🌐"
   }
 ];
